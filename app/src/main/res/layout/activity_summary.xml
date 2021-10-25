@@ -13,6 +13,7 @@
         android:layout_margin="10dp"
         android:text="TextView"
         android:textAlignment="center"
+        android:textColor="#1E1E1E"
         android:textSize="34sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -37,6 +38,7 @@
         android:layout_margin="10dp"
         android:text="Početna"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/txt_predmet" />
 </androidx.constraintlayout.widget.ConstraintLayout>
