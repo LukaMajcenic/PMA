@@ -17,6 +17,12 @@ public class SummaryActivity extends AppCompatActivity {
 
         TextView txt_predmet = (TextView)findViewById(R.id.txt_predmet);
         TextView txt_ime = (TextView)findViewById(R.id.txt_ime);
+        TextView txt_prezime = (TextView)findViewById(R.id.txt_prezime);
+        TextView txt_datum = (TextView)findViewById(R.id.txt_datum);
+        TextView txt_godina = (TextView)findViewById(R.id.txt_godina);
+        TextView txt_satiPredavanja = (TextView)findViewById(R.id.txt_satiPredavanja);
+        TextView txt_satiLV = (TextView)findViewById(R.id.txt_satiLV);
+        TextView txt_profesor = (TextView)findViewById(R.id.txt_profesor);
         Button btn_exit = (Button)findViewById(R.id.btn_exit);
 
         Bundle extras = getIntent().getExtras();
@@ -24,6 +30,12 @@ public class SummaryActivity extends AppCompatActivity {
         {
             txt_predmet.setText(extras.getString("predmet"));
             txt_ime.setText(extras.getString("ime"));
+            txt_prezime.setText(extras.getString("prezime"));
+            txt_datum.setText(extras.getString("datum"));
+            txt_godina.setText(extras.getString("godina"));
+            txt_satiPredavanja.setText(extras.getString("satiPredavanja"));
+            txt_satiLV.setText(extras.getString("satiLV"));
+            txt_profesor.setText(extras.getString("profesor"));
         }
 
         btn_exit.setOnClickListener(new View.OnClickListener() {
