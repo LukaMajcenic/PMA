@@ -4,130 +4,118 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:padding="16dp"
     tools:context=".StudentInfoActivity">
 
-    <LinearLayout
-        android:id="@+id/linearLayoutTxt1"
-        android:layout_width="fill_parent"
+    <TextView
+        android:id="@+id/textViewIme"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_margin="16dp"
-        app:layout_constraintEnd_toEndOf="parent"
+        android:text="TextView"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toStartOf="@+id/textViewPrezime"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        app:layout_constraintTop_toTopOf="parent" />
 
-        <TextView
-            android:id="@+id/textViewIme"
-            android:layout_width="fill_parent"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="TextView"
-            android:textSize="20sp" />
-
-        <TextView
-            android:id="@+id/textViewPrezime"
-            android:layout_width="fill_parent"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="TextView"
-            android:textSize="20sp" />
-    </LinearLayout>
-
-    <LinearLayout
-        android:id="@+id/linearLayoutTxt2"
-        android:layout_width="fill_parent"
+    <TextView
+        android:id="@+id/textViewPrezime"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_margin="16dp"
+        android:layout_weight="1"
+        android:text="TextView"
+        android:textSize="20sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/linearLayoutTxt1">
+        app:layout_constraintStart_toEndOf="@+id/textViewIme"
+        app:layout_constraintTop_toTopOf="parent" />
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Datum: "
-            android:textSize="20sp" />
-
-        <TextView
-            android:id="@+id/textViewDatum"
-            android:layout_width="fill_parent"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:textSize="20sp" />
-    </LinearLayout>
-
-    <LinearLayout
-        android:id="@+id/linearLayoutTxt3"
-        android:layout_width="fill_parent"
+    <TextView
+        android:id="@+id/textViewDatumReadOnly"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_margin="16dp"
-        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="16dp"
+        android:text="Datum: "
+        android:textSize="20sp"
+        app:layout_constraintEnd_toStartOf="@+id/textViewDatum"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/linearLayoutTxt2">
+        app:layout_constraintTop_toBottomOf="@+id/textViewIme" />
 
-        <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/input_predmet"
-            android:layout_width="fill_parent"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent">
-
-            <com.google.android.material.textfield.TextInputEditText
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:hint="Predmet" />
-        </com.google.android.material.textfield.TextInputLayout>
-
-        <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/input_profesor"
-            android:layout_width="fill_parent"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent">
-
-            <com.google.android.material.textfield.TextInputEditText
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:hint="Profesor" />
-        </com.google.android.material.textfield.TextInputLayout>
-    </LinearLayout>
-
-    <LinearLayout
-        android:id="@+id/linearLayoutTxt4"
-        android:layout_width="fill_parent"
+    <TextView
+        android:id="@+id/textViewDatum"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_margin="16dp"
-        android:orientation="horizontal"
+        android:layout_marginTop="16dp"
+        android:layout_weight="1"
+        android:text="datum"
+        android:textSize="20sp"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/textViewDatumReadOnly"
+        app:layout_constraintTop_toBottomOf="@+id/textViewPrezime" />
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/input_predmet"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        app:layout_constraintEnd_toStartOf="@+id/input_profesor"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/linearLayoutTxt3">
+        app:layout_constraintTop_toBottomOf="@+id/textViewDatum">
 
-        <EditText
-            android:id="@+id/editTextGodina"
-            android:layout_width="fill_parent"
+        <com.google.android.material.textfield.TextInputEditText
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:ems="10"
-            android:layout_weight="1"
-            android:inputType="numberSigned"/>
+            android:hint="Predmet" />
+    </com.google.android.material.textfield.TextInputLayout>
 
-        <EditText
-            android:id="@+id/editTextSatiPredavanja"
-            android:layout_width="fill_parent"
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/input_profesor"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/input_predmet"
+        app:layout_constraintTop_toBottomOf="@+id/textViewDatum">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:ems="10"
-            android:layout_weight="1"
-            android:inputType="numberSigned"/>
+            android:hint="Profesor" />
+    </com.google.android.material.textfield.TextInputLayout>
 
-        <EditText
-            android:id="@+id/editTextSatiLV"
-            android:layout_width="fill_parent"
-            android:layout_height="wrap_content"
-            android:ems="10"
-            android:layout_weight="1"
-            android:inputType="numberSigned"/>
+    <EditText
+        android:id="@+id/editTextGodina"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:ems="10"
+        android:hint="Godina"
+        android:inputType="numberSigned"
+        app:layout_constraintEnd_toStartOf="@+id/editTextSatiPredavanja"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/input_profesor" />
 
-    </LinearLayout>
+    <EditText
+        android:id="@+id/editTextSatiPredavanja"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:ems="10"
+        android:hint="Sati predavanja"
+        android:inputType="numberSigned"
+        app:layout_constraintEnd_toStartOf="@+id/editTextSatiLV"
+        app:layout_constraintStart_toEndOf="@+id/editTextGodina"
+        app:layout_constraintTop_toBottomOf="@+id/input_profesor" />
+
+    <EditText
+        android:id="@+id/editTextSatiLV"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:ems="10"
+        android:hint="Sati LV"
+        android:inputType="numberSigned"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/editTextSatiPredavanja"
+        app:layout_constraintTop_toBottomOf="@+id/input_profesor" />
 
     <Button
         android:id="@+id/btn_otvoriActivitiy2"

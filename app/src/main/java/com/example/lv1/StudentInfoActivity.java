@@ -49,6 +49,7 @@ public class StudentInfoActivity extends AppCompatActivity {
                 i.putExtra("godina", editText_godina.getText().toString());
                 i.putExtra("satiPredavanja", editText_satiPredavanja.getText().toString());
                 i.putExtra("satiLV", editText_satiLV.getText().toString());
+                i.putExtra("profesor", input_profesor.getEditText().getText().toString());
 
                 startActivity(i);
             }
