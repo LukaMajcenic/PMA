@@ -41,8 +41,15 @@ public class SummaryActivity extends AppCompatActivity {
         btn_exit.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent i = new Intent(SummaryActivity.this, PersonalInfoActivity.class);
+                Intent i = new Intent(SummaryActivity.this, HomeActivity.class);
                 i.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                Student newStudent = new Student(
+                        extras.getString("ime"),
+                        extras.getString("prezime"),
+                        extras.getString("predmet"));
+                StudentList studentList = com.example.lv1.StudentList.getInstance();
+                studentList.AddStudent(newStudent);
+                i.putExtra("student", newStudent);
                 startActivity(i);
             }
         });
