@@ -27,9 +27,7 @@ public class HomeActivity extends AppCompatActivity implements Serializable {
 
         Student student = (Student)getIntent().getSerializableExtra("student");
 
-        StudentList studentList = StudentList.getInstance();
-        ArrayList<Student> studentiSingleton;
-        studentiSingleton = (ArrayList<Student>) studentList.ReturnList();
+        ArrayList<Student> studentiSingleton = (ArrayList<Student>) StudentList.getInstance().ReturnList();
 
         List<Object> myDataSet = new ArrayList<>();
         myDataSet.add("Studenti:");

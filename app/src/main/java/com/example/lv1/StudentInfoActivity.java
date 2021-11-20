@@ -25,7 +25,7 @@ public class StudentInfoActivity extends AppCompatActivity {
         TextInputLayout input_profesor = (TextInputLayout)findViewById(R.id.input_profesor);
         EditText editText_godina = (EditText)findViewById(R.id.editTextGodina);
         EditText editText_satiPredavanja = (EditText)findViewById(R.id.editTextSatiPredavanja);
-        EditText editText_satiLV = (EditText)findViewById(R.id.editTextSatiPredavanja);
+        EditText editText_satiLV = (EditText)findViewById(R.id.editTextSatiLV);
         TextView textViewIme = (TextView)findViewById(R.id.textViewIme);
         TextView textViewPrezime = (TextView)findViewById(R.id.textViewPrezime);
         TextView textViewDatum = (TextView)findViewById(R.id.textViewDatum);
