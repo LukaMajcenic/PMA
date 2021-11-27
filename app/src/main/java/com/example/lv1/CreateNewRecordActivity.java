@@ -1,14 +1,10 @@
 package com.example.lv1;
 
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
-import androidx.fragment.app.FragmentTransaction;
 import androidx.viewpager2.widget.ViewPager2;
 
 import android.os.Bundle;
-
-import com.google.android.material.textfield.TextInputLayout;
 
 public class CreateNewRecordActivity extends AppCompatActivity {
 
@@ -25,13 +21,5 @@ public class CreateNewRecordActivity extends AppCompatActivity {
         FragmentManager fm = getSupportFragmentManager();
         adapter = new FragmentAdapter(fm, getLifecycle());
         pager2.setAdapter(adapter);
-
-        // Create new fragment and transaction
-        //Fragment newFragment = new PersonalInfoFragment();
-        //FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
-
-        //transaction.replace(R.id.viewPager, newFragment);
-
-        //transaction.commit();
     }
 }

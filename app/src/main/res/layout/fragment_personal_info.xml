@@ -4,7 +4,6 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:padding="16dp"
     tools:context=".PersonalInfoFragment">
 
     <ImageView
@@ -12,7 +11,7 @@
         android:layout_width="150dp"
         android:layout_height="150dp"
         android:layout_centerInParent="true"
-        android:layout_marginBottom="16dp"
+        android:layout_margin="16dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
@@ -32,6 +31,7 @@
         android:id="@+id/input_ime"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
+        android:layout_margin="16dp"
         android:hint="Ime"
         app:layout_constraintEnd_toStartOf="@+id/input_prezime"
         app:layout_constraintStart_toStartOf="parent"
@@ -43,6 +43,7 @@
         android:id="@+id/input_prezime"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
+        android:layout_margin="16dp"
         android:hint="Prezime"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/input_ime"
@@ -64,18 +65,19 @@
         android:id="@+id/textView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginRight="16dp"
+        android:layout_margin="16dp"
         android:text="Datum:"
         android:textSize="20sp"
         app:layout_constraintBottom_toBottomOf="@id/input_datum"
         app:layout_constraintEnd_toStartOf="@+id/input_datum"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/divider1" />
+            app:layout_constraintTop_toTopOf="@+id/input_datum" />
 
     <com.google.android.material.textfield.TextInputEditText
         android:id="@+id/input_datum"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
+        android:layout_margin="16dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/textView"
         app:layout_constraintTop_toBottomOf="@+id/divider1">
@@ -91,7 +93,6 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/input_datum" />
-
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

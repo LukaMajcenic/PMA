@@ -6,10 +6,9 @@ import java.io.Serializable;
 
 public class Student implements Serializable, FragmentListener {
 
-    public String Ime;
-    public String Prezime;
-    public String Predmet;
-
+    private String Ime;
+    private String Prezime;
+    private String Predmet;
     private String Datum;
     private String Godina;
     private String SatiPredavanja;

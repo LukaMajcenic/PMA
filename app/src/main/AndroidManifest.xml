@@ -16,15 +16,6 @@
             android:name=".CreateNewRecordActivity"
             android:exported="false" />
         <activity
-            android:name=".PersonalInfoActivity"
-            android:exported="false" />
-        <activity
-            android:name=".SummaryActivity"
-            android:exported="false" />
-        <activity
-            android:name=".StudentInfoActivity"
-            android:exported="false" />
-        <activity
             android:name=".HomeActivity"
             android:exported="true">
             <intent-filter>
