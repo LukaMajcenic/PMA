@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".StudentInfoFragment">
+
+    <com.google.android.material.textfield.TextInputEditText
+        android:id="@+id/input_predmet"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:hint="Predmet"
+        app:layout_constraintEnd_toStartOf="@+id/input_profesor"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+    </com.google.android.material.textfield.TextInputEditText>
+
+    <com.google.android.material.textfield.TextInputEditText
+        android:id="@+id/input_profesor"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:hint="Profesor"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/input_predmet"
+        app:layout_constraintTop_toTopOf="parent">
+
+    </com.google.android.material.textfield.TextInputEditText>
+
+    <com.google.android.material.textfield.TextInputEditText
+        android:id="@+id/input_godina"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:ems="10"
+        android:hint="Godina"
+        android:inputType="numberSigned"
+        app:layout_constraintEnd_toStartOf="@+id/input_sati_predavanja"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/input_profesor" />
+
+    <com.google.android.material.textfield.TextInputEditText
+        android:id="@+id/input_sati_predavanja"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:ems="10"
+        android:hint="Sati predavanja"
+        android:inputType="numberSigned"
+        app:layout_constraintEnd_toStartOf="@+id/input_sati_lv"
+        app:layout_constraintStart_toEndOf="@+id/input_godina"
+        app:layout_constraintTop_toBottomOf="@+id/input_profesor" />
+
+    <com.google.android.material.textfield.TextInputEditText
+        android:id="@+id/input_sati_lv"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:ems="10"
+        android:hint="Sati LV"
+        android:inputType="numberSigned"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/input_sati_predavanja"
+        app:layout_constraintTop_toBottomOf="@+id/input_profesor" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

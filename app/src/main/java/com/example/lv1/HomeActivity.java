@@ -43,7 +43,7 @@ public class HomeActivity extends AppCompatActivity implements Serializable {
         btnHomeActivitiy.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(HomeActivity.this, PersonalInfoActivity.class));
+                startActivity(new Intent(HomeActivity.this, CreateNewRecordActivity.class));
             }
         });
     }
