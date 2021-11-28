@@ -12,7 +12,7 @@ import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-public class SummaryFragment extends Fragment {
+public class SummaryFragment extends Fragment implements FragmentObserver {
 
     TextView txt_ime, txt_prezime, txt_datum, txt_godina, txt_predmet, txt_satiPredavanja, txt_satiLV, txt_profesor;
     ImageView imageViewProfilna;
@@ -66,9 +66,7 @@ public class SummaryFragment extends Fragment {
     }
 
     @Override
-    public void onResume(){
-        super.onResume();
-
+    public void updateValues() {
         if(fragmentListener != null) {
             txt_ime.setText(fragmentListener.getIme());
             txt_prezime.setText(fragmentListener.getPrezime());
