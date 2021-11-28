@@ -46,6 +46,8 @@ public class SummaryFragment extends Fragment implements FragmentObserver {
         imageViewProfilna = view.findViewById(R.id.imageViewSummary);
         btn_spremi = view.findViewById(R.id.btn_exit);
 
+        updateValues();
+
         btn_spremi.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
