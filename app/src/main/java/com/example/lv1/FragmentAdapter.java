@@ -11,6 +11,8 @@ import androidx.viewpager2.adapter.FragmentStateAdapter;
 import java.util.ArrayList;
 import java.util.List;
 
+import retrofit2.Retrofit;
+
 public class FragmentAdapter extends FragmentStateAdapter implements FragmentListener {
     public FragmentAdapter(@NonNull FragmentManager fragmentManager, @NonNull Lifecycle lifecycle) {
         super(fragmentManager, lifecycle);

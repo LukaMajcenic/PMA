@@ -6,31 +6,27 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".StudentInfoFragment">
 
-    <com.google.android.material.textfield.TextInputEditText
-        android:id="@+id/input_predmet"
+    <Spinner
+        android:id="@+id/spinner_predmet"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_margin="16dp"
         android:layout_marginTop="16dp"
         android:hint="Predmet"
-        app:layout_constraintEnd_toStartOf="@+id/input_profesor"
+        app:layout_constraintEnd_toStartOf="@+id/spinner_profesor"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        app:layout_constraintTop_toTopOf="parent"/>
 
-    </com.google.android.material.textfield.TextInputEditText>
-
-    <com.google.android.material.textfield.TextInputEditText
-        android:id="@+id/input_profesor"
+    <Spinner
+        android:id="@+id/spinner_profesor"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_margin="16dp"
         android:layout_marginEnd="16dp"
         android:hint="Profesor"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/input_predmet"
-        app:layout_constraintTop_toTopOf="parent">
-
-    </com.google.android.material.textfield.TextInputEditText>
+        app:layout_constraintStart_toEndOf="@+id/spinner_predmet"
+        app:layout_constraintTop_toTopOf="parent"/>
 
     <com.google.android.material.textfield.TextInputEditText
         android:id="@+id/input_godina"
@@ -42,7 +38,7 @@
         android:inputType="numberSigned"
         app:layout_constraintEnd_toStartOf="@+id/input_sati_predavanja"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/input_profesor" />
+        app:layout_constraintTop_toBottomOf="@+id/spinner_profesor" />
 
     <com.google.android.material.textfield.TextInputEditText
         android:id="@+id/input_sati_predavanja"
@@ -54,7 +50,7 @@
         android:inputType="numberSigned"
         app:layout_constraintEnd_toStartOf="@+id/input_sati_lv"
         app:layout_constraintStart_toEndOf="@+id/input_godina"
-        app:layout_constraintTop_toBottomOf="@+id/input_profesor" />
+        app:layout_constraintTop_toBottomOf="@+id/spinner_profesor" />
 
     <com.google.android.material.textfield.TextInputEditText
         android:id="@+id/input_sati_lv"
@@ -66,6 +62,6 @@
         android:inputType="numberSigned"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@id/input_sati_predavanja"
-        app:layout_constraintTop_toBottomOf="@+id/input_profesor" />
+        app:layout_constraintTop_toBottomOf="@+id/spinner_profesor" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

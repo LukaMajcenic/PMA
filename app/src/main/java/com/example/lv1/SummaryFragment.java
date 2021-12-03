@@ -14,6 +14,7 @@ import android.widget.TextView;
 
 public class SummaryFragment extends Fragment implements FragmentObserver {
 
+    View view;
     TextView txt_ime, txt_prezime, txt_datum, txt_godina, txt_predmet, txt_satiPredavanja, txt_satiLV, txt_profesor;
     ImageView imageViewProfilna;
     Button btn_spremi;
@@ -33,7 +34,7 @@ public class SummaryFragment extends Fragment implements FragmentObserver {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        View view = inflater.inflate(R.layout.fragment_summary, container, false);
+        view = inflater.inflate(R.layout.fragment_summary, container, false);
 
         txt_ime = view.findViewById(R.id.txt_ime);
         txt_prezime = view.findViewById(R.id.txt_prezime);
@@ -69,7 +70,7 @@ public class SummaryFragment extends Fragment implements FragmentObserver {
 
     @Override
     public void updateValues() {
-        if(fragmentListener != null) {
+        if(fragmentListener != null && view != null) {
             txt_ime.setText(fragmentListener.getIme());
             txt_prezime.setText(fragmentListener.getPrezime());
             txt_datum.setText(fragmentListener.getDatum());
