@@ -33,7 +33,7 @@ public class SummaryFragment extends Fragment implements FragmentObserver {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
+
         view = inflater.inflate(R.layout.fragment_summary, container, false);
 
         txt_ime = view.findViewById(R.id.txt_ime);
@@ -75,10 +75,10 @@ public class SummaryFragment extends Fragment implements FragmentObserver {
             txt_prezime.setText(fragmentListener.getPrezime());
             txt_datum.setText(fragmentListener.getDatum());
             txt_godina.setText(fragmentListener.getGodina());
-            txt_predmet.setText(fragmentListener.getPredmet());
+            txt_predmet.setText(fragmentListener.getPredmet().title);
             txt_satiPredavanja.setText(fragmentListener.getSatiPredavanja());
             txt_satiLV.setText(fragmentListener.getSatiLV());
-            txt_profesor.setText(fragmentListener.getProfesor());
+            txt_profesor.setText(fragmentListener.getProfesor().name);
             imageViewProfilna.setImageBitmap(fragmentListener.getProfilna());
         }
     }

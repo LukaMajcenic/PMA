@@ -10,7 +10,6 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
-import android.widget.ArrayAdapter;
 import android.widget.EditText;
 import android.widget.Spinner;
 
@@ -23,9 +22,9 @@ import retrofit2.Response;
 public class StudentInfoFragment extends Fragment implements Callback<CourseResponse>
 {
     public FragmentListener fragmentListener;
-    View view;
-    EditText input_godina, input_sati_predavanja, input_sati_lv;
-    ArrayList<Course> courses = new ArrayList<>();
+    private View view;
+    private EditText input_godina, input_sati_predavanja, input_sati_lv;
+    private ArrayList<Course> courses = new ArrayList<>();
 
     public StudentInfoFragment() {
     }
@@ -40,16 +39,8 @@ public class StudentInfoFragment extends Fragment implements Callback<CourseResp
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
+
         view = inflater.inflate(R.layout.fragment_student_info, container, false);
-
-        Course newCourse = new Course();
-        newCourse.title = "test";
-        //courses.add(newCourse);
-
-        // Initialize the adapter sending the current context
-        // Send the simple_spinner_item layout
-        // And finally send the Users array (Your data)
 
         input_godina = view.findViewById(R.id.input_godina);
         input_sati_predavanja = view.findViewById(R.id.input_sati_predavanja);
@@ -112,19 +103,42 @@ public class StudentInfoFragment extends Fragment implements Callback<CourseResp
     @Override
     public void onResponse(Call<CourseResponse> call, Response<CourseResponse> response) {
         if (response.isSuccessful() && response.body() != null){
-            courses.addAll(response.body().courses.subList(0,9));
+            for(Course course : response.body().courses)
+            {
+                if(course.instructors != null)
+                {
+                    courses.add(course);
+                }
+            }
         }
 
-        SpinnerAdapter predmetSpinnerAdapter = new SpinnerAdapter(getActivity(),
+        PredmetSpinnerAdapter predmetSpinnerAdapter = new PredmetSpinnerAdapter(getActivity(),
                 android.R.layout.simple_spinner_item,
-                courses, 0);
-        Spinner mySpinner = (Spinner) view.findViewById(R.id.spinner_predmet);
-        mySpinner.setAdapter(predmetSpinnerAdapter);
-        mySpinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+                courses);
+        Spinner predmetSpinner = (Spinner) view.findViewById(R.id.spinner_predmet);
+        predmetSpinner.setAdapter(predmetSpinnerAdapter);
+        predmetSpinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
-            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-                int x = position;
-                fragmentListener.setPredmet(courses.get(position).title);
+            public void onItemSelected(AdapterView<?> parent, View v, int position, long id) {
+                fragmentListener.setPredmet(courses.get(position));
+
+                ProfesorSpinnerAdapter profesorSpinnerAdapter = new ProfesorSpinnerAdapter(getActivity(),
+                        android.R.layout.simple_spinner_item,
+                        fragmentListener.getPredmet().instructors);
+                Spinner profesorSpinner = (Spinner) view.findViewById(R.id.spinner_profesor);
+                profesorSpinner.setAdapter(profesorSpinnerAdapter);
+
+                profesorSpinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+                    @Override
+                    public void onItemSelected(AdapterView<?> parent, View v, int position, long id) {
+                        fragmentListener.setProfesor(fragmentListener.getPredmet().instructors.get(position));
+                    }
+
+                    @Override
+                    public void onNothingSelected(AdapterView<?> parent) {
+
+                    }
+                });
             }
 
             @Override
@@ -132,12 +146,6 @@ public class StudentInfoFragment extends Fragment implements Callback<CourseResp
 
             }
         });
-
-        SpinnerAdapter profesorSpinnerAdapter = new SpinnerAdapter(getActivity(),
-                android.R.layout.simple_spinner_item,
-                courses, 1);
-        Spinner profesorSpinner = (Spinner) view.findViewById(R.id.spinner_profesor);
-        profesorSpinner.setAdapter(profesorSpinnerAdapter);
     }
 
     @Override

@@ -11,17 +11,15 @@ import androidx.arch.core.util.Function;
 
 import java.util.ArrayList;
 
-public class SpinnerAdapter extends ArrayAdapter<Course> {
+public class PredmetSpinnerAdapter extends ArrayAdapter<Course> {
 
     private Context context;
     private ArrayList<Course> courses;
-    private int meh;
 
-    public SpinnerAdapter(@NonNull Context context, int textViewResourceId, ArrayList<Course> courses, int meh) {
+    public PredmetSpinnerAdapter(@NonNull Context context, int textViewResourceId, ArrayList<Course> courses) {
         super(context, textViewResourceId, courses);
         this.context = context;
         this.courses = courses;
-        this.meh = meh;
     }
 
     @Override
@@ -41,42 +39,18 @@ public class SpinnerAdapter extends ArrayAdapter<Course> {
 
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
-        // I created a dynamic TextView here, but you can reference your own  custom layout for each spinner item
-        TextView label = (TextView) super.getView(position, convertView, parent);
 
-        switch (meh)
-        {
-            case 0:
-                label.setText(courses.get(position).title);
-                break;
-            case 1:
-                label.setText(courses.get(position).name);
-                break;
-            default:
-                break;
-        }
+        TextView label = (TextView) super.getView(position, convertView, parent);
+        label.setText(courses.get(position).title);
 
         return label;
     }
 
-    // And here is when the "chooser" is popped up
-    // Normally is the same view, but you can customize it if you want
     @Override
     public View getDropDownView(int position, View convertView,
                                 ViewGroup parent) {
         TextView label = (TextView) super.getDropDownView(position, convertView, parent);
-
-        switch (meh)
-        {
-            case 0:
-                label.setText(courses.get(position).title);
-                break;
-            case 1:
-                label.setText(courses.get(position).name);
-                break;
-            default:
-                break;
-        }
+        label.setText(courses.get(position).title);
 
         return label;
     }
